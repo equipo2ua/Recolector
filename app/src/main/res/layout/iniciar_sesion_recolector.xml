@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/paletaSuperior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:height="50dp"
+        />
+
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Socio Recolector"
+            android:textSize="30dp"
+            android:textColor="@android:color/black"
+            android:textAlignment="center"
+            android:layout_marginTop="40dp"
+            android:layout_below="@id/paletaSuperior"
+            />
+
+            <EditText
+                android:id="@+id/inputUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:width="225dp"
+                android:hint="Nombre de usuario"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/titulo"
+                />
+
+            <EditText
+                android:id="@+id/inputConstraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:width="225dp"
+                android:hint="Contraseña"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/inputUsuario"
+                />
+
+        <TextView
+            android:id="@+id/olvidoContraseña"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:width="225dp"
+            android:text=" ¿Olvidaste la contraseña?"
+            android:textColor="@android:color/black"
+            android:textAlignment="center"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/inputConstraseña"/>
+
+        <Button
+            android:id="@+id/botonSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:width="225dp"
+            android:text="Iniciar sesión"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/olvidoContraseña"/>
+
+
+        <TextView
+            android:id="@+id/paletaInferior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:height="50dp"
+            android:layout_alignParentBottom="true"
+                />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
