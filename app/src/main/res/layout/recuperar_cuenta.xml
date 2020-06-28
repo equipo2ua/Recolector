@@ -28,66 +28,82 @@
             android:layout_alignLeft="@id/paletaSuperior"
             />
 
-            <RelativeLayout
-                android:id="@+id/hijo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/paletaSuperior"
-                android:gravity="center">
 
 
-                <TextView
-                    android:id="@+id/fondogris"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="55dp"
-                    android:width="320dp"
-                    android:height="320dp"
-                    android:background="@android:color/darker_gray"
-
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="55dp"
-                    android:text="Recuperar contraseña"
-                    android:textSize="28dp"></TextView>
-
-
-            </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/contenedorBotones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_below="@id/paletaSuperior"
             >
 
-            <Button
-                android:id="@+id/cancelar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:width="150dp"
-                android:layout_marginRight="20dp"
-                android:text="Cancelar"
-                />
-            <Button
-                android:id="@+id/crearRegistro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:width="150dp"
-                android:text="Registrarse"
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:background="@android:color/darker_gray"
+                >
 
-                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Recuperar Contraseña"
+                    android:textSize="25dp"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:width="251dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="indica tu correo para poder enviarte el código con el cual podrás recuperar tu cuenta"
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:width="251dp"
+                        android:hint="Correo"
+                       android:background="@android:color/white"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    >
+
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancelar"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:textSize="12dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enviar"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        android:textSize="12dp"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
 
         </LinearLayout>
-
-
-
 
         <TextView
             android:id="@+id/paletaInferior"

@@ -5,13 +5,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/primaryBackgroundColor"
+        >
 
         <TextView
             android:id="@+id/paletaSuperior"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
+            android:background="@color/primaryColor"
             android:text="Registro recolector"
             android:textSize="25dp"
             android:textColor="@android:color/black"
@@ -131,6 +133,7 @@
                     android:width="150dp"
                     android:layout_marginRight="20dp"
                     android:text="Cancelar"
+                    android:background="@color/primaryColor"
                     />
                 <Button
                     android:id="@+id/crearRegistro"
@@ -139,6 +142,7 @@
                     android:layout_marginTop="25dp"
                     android:width="150dp"
                     android:text="Registrarse"
+                    android:background="@color/primaryColor"
 
                     />
 
@@ -151,7 +155,7 @@
             android:id="@+id/paletaInferior"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
+            android:background="@color/primaryColor"
             android:height="50dp"
             android:layout_alignParentBottom="true"
             />
