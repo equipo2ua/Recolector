@@ -1,27 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/primaryBackgroundColor">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="center_horizontal"
-
+            android:layout_margin="15dp"
+            android:background="#ffffff"
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recuperar contraseña"
-                android:textSize="28dp" />
+                android:text="Recuperar cuenta"
+                android:textSize="30dp"
+                android:background="@color/primaryDarkColor"
+                android:textColor="#ffffff"
+                android:padding="10dp"/>
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Revisa ru correo e indique el codigo enviado"
+                android:textSize="20dp"
+                android:layout_margin="20dp"/>
+            <EditText
+                android:id="@+id/y1"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Código de recuperación"
+                android:textSize="20sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp"
+                android:padding="20dp">
+
+                <Button
+                    android:id="@+id/cancelar"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/primaryColor"
+                    android:text="Cancelar"
+                    android:textColor="@android:color/background_light" />
+
+                <Button
+                    android:id="@+id/verificar"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/primaryColor"
+                    android:text="Verificar"
+                    android:textColor="@android:color/background_light" />
+            </LinearLayout>
+
 
 
         </LinearLayout>
