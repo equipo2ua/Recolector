@@ -38,6 +38,7 @@
                 >
 
                 <EditText
+                    android:id="@+id/FormNombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Nombres"
@@ -47,6 +48,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <EditText
+                    android:id="@+id/FormApellido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Apellidos"
@@ -56,6 +58,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <EditText
+                    android:id="@+id/FormCorreo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Correo electrónico"
@@ -65,6 +68,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <EditText
+                    android:id="@+id/FormTelefono"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Teléfono"
@@ -74,6 +78,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <EditText
+                    android:id="@+id/FormComuna"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Comuna"
@@ -83,6 +88,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <EditText
+                    android:id="@+id/FormCalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Calle y numeración"
@@ -92,6 +98,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <EditText
+                    android:id="@+id/FormContraseña"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
@@ -101,6 +108,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <EditText
+                    android:id="@+id/FormRepetirContraseña"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Repetir contraseña"
@@ -124,6 +132,7 @@
                     >
 
                     <Button
+                        android:id="@+id/FormCancelarButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cancelar"
@@ -133,6 +142,7 @@
                         android:background="@color/primaryColor"
                         />
                     <Button
+                        android:id="@+id/FormRegistrarseButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Registrarse"

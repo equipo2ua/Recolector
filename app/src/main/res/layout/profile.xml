@@ -42,7 +42,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/Profilename"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Andrés Luciano"
@@ -55,7 +55,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/lastName"
+                android:id="@+id/ProfilelastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Montecinos Kern"
@@ -68,7 +68,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/address"
+                android:id="@+id/Profileaddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Calle Uno 2343"
@@ -81,7 +81,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/gender"
+                android:id="@+id/Profilegender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Prefiero no decirlo"
@@ -94,7 +94,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/phone"
+                android:id="@+id/Profilephone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="+569 9876 5432"
@@ -107,7 +107,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/ProfileEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="andres.xxxxxxx@xxxxx.com"

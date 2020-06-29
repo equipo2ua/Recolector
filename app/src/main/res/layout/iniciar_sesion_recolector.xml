@@ -1,91 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/paletaSuperior"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
-        android:height="50dp"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/primaryBackgroundColor">
 
 
-        <TextView
-            android:id="@+id/titulo"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="Socio Recolector"
-            android:textSize="30dp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"
-            android:layout_marginTop="40dp"
-            android:layout_below="@id/paletaSuperior"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:background="#ffffff"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/primaryBackgroundColor">
+
+                <TextView
+                    android:id="@+id/IS_registrarse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registrarse"
+                    android:textSize="16dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Socio Recolector"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:background="@color/primaryDarkColor"
+                android:textColor="#ffffff"
+                android:padding="10dp"/>
             />
 
             <EditText
-                android:id="@+id/inputUsuario"
-                android:layout_width="wrap_content"
+                android:id="@+id/IS_nombre"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:width="225dp"
                 android:hint="Nombre de usuario"
-                android:layout_centerInParent="true"
-                android:layout_below="@id/titulo"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
                 />
-
             <EditText
-                android:id="@+id/inputConstraseña"
+                android:id="@+id/IS_contraseña"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"/>
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:width="225dp"
-                android:hint="Contraseña"
-                android:layout_centerInParent="true"
-                android:layout_below="@id/inputUsuario"
+                android:text="¿Olvidaste la contraseña?"
+                android:textSize="17dp"
+                android:layout_marginTop="35dp"
                 />
 
-        <TextView
-            android:id="@+id/olvidoContraseña"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:width="225dp"
-            android:text=" ¿Olvidaste la contraseña?"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/inputConstraseña"/>
 
-        <Button
-            android:id="@+id/botonSesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:width="225dp"
-            android:text="Iniciar sesión"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/olvidoContraseña"/>
+            <Button
+                android:id="@+id/IS_iniciarSesionButton"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/primaryColor"
+                android:text="Iniciar sesión"
+                android:layout_marginBottom="40dp"
+                android:textColor="@android:color/background_light" />
 
 
-        <TextView
-            android:id="@+id/paletaInferior"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
-            android:height="50dp"
-            android:layout_alignParentBottom="true"
-                />
+        </LinearLayout>
 
-    </RelativeLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
