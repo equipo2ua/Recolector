@@ -1,119 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
-        android:id="@+id/base"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <TextView
-            android:id="@+id/paletaSuperior"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:height="50dp"
-            />
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_alignLeft="@id/paletaSuperior"
-            />
-
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/primaryBackgroundColor">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_below="@id/paletaSuperior"
+            android:gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:background="#ffffff"
             >
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recuperar Cuenta"
+                android:textSize="30dp"
+                android:background="@color/primaryDarkColor"
+                android:textColor="#ffffff"
+                android:padding="10dp"/>
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="indica tu correo para poder enviarte el código con el cual podrás recuperar tu contraseña"
+                android:textSize="20dp"
+                android:layout_margin="20dp"/>
+            <EditText
+                android:id="@+id/y1"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo"
+                android:textSize="20sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"/>
             <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:orientation="vertical"
-                android:background="@android:color/darker_gray"
-                >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp"
+                android:padding="20dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/RCCancelar"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Recuperar Contraseña"
-                    android:textSize="25dp"
-                    android:layout_marginTop="10dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/primaryColor"
+                    android:text="Cancelar"
+                    android:textColor="@android:color/background_light" />
+
+                <Button
+                    android:id="@+id/RCEnviar"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:width="251dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:text="indica tu correo para poder enviarte el código con el cual podrás recuperar tu cuenta"
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="25dp"
-                        android:width="251dp"
-                        android:hint="Correo"
-                       android:background="@android:color/white"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_horizontal"
-                    >
-
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cancelar"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textSize="12dp"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Enviar"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="30dp"
-                        android:textSize="12dp"/>
-
-                </LinearLayout>
-
-
-
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/primaryColor"
+                    android:text="Enviar"
+                    android:textColor="@android:color/background_light" />
             </LinearLayout>
+
+
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/paletaInferior"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
-            android:height="50dp"
-            android:layout_alignParentBottom="true"
-            />
-
-    </RelativeLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
