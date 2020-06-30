@@ -53,7 +53,7 @@
 
             <EditText
                 android:id="@+id/IS_nombre"
-                android:inputType="numberDecimal"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre de usuario"
@@ -65,7 +65,7 @@
                 />
             <EditText
                 android:id="@+id/IS_contraseña"
-                android:inputType="numberDecimal"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
@@ -75,6 +75,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="35dp"/>
             <TextView
+                android:id="@+id/forgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="¿Olvidaste la contraseña?"

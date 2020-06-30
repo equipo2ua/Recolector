@@ -8,21 +8,22 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
-
 public class IniciarSesion  extends AppCompatActivity {
 
     Intent intencion;
     TextView registrarse;
+    TextView forgotPassword;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.iniciar_sesion_recolector);
         registrarse = (TextView) findViewById(R.id.IS_registrarse);
         registrarse.setOnClickListener(Listen);
+        forgotPassword = (TextView) findViewById(R.id.forgotPassword);
+        forgotPassword.setOnClickListener(Listen);
     }
 
 
-     View.OnClickListener Listen = new View.OnClickListener() {
+     final View.OnClickListener Listen = new View.OnClickListener() {
          @Override
          public void onClick(View v) {
 
@@ -32,13 +33,14 @@ public class IniciarSesion  extends AppCompatActivity {
                      intencion = new Intent(IniciarSesion.this,RegistroRecolector.class);
                      startActivity(intencion);
                      break;
+                 case R.id.forgotPassword:
+                     intencion = new Intent(IniciarSesion.this,ForgotPassword.class);
+                     startActivity(intencion);
+                     break;
 
              }
          }
      };
-
-
-
 
 
 
