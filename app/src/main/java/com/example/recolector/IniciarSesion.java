@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,12 @@ public class IniciarSesion  extends AppCompatActivity {
     Intent intencion;
     TextView registrarse;
     TextView forgotPassword;
+
+    //ejemplo dinámico
+    TextView ejemplo;
+    LinearLayout container;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.iniciar_sesion_recolector);
@@ -20,6 +27,15 @@ public class IniciarSesion  extends AppCompatActivity {
         registrarse.setOnClickListener(Listen);
         forgotPassword = (TextView) findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(Listen);
+
+        //ejemplo dinamico
+        ejemplo = new TextView(this);
+        ejemplo.setText("wena los k");
+
+        container = (LinearLayout) findViewById(R.id.contenedor);
+        container.addView(ejemplo);
+
+
     }
 
 
