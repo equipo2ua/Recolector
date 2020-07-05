@@ -16,7 +16,7 @@ public class IniciarSesion  extends AppCompatActivity {
     TextView forgotPassword;
 
     //ejemplo dinámico
-    TextView ejemplo;
+   // TextView ejemplo;
     LinearLayout container;
 
 
@@ -29,12 +29,14 @@ public class IniciarSesion  extends AppCompatActivity {
         forgotPassword.setOnClickListener(Listen);
 
         //ejemplo dinamico
-        ejemplo = new TextView(this);
-        ejemplo.setText("wena los k");
+       // ejemplo = new TextView(this);
+        //ejemplo.setText("wena los k");
 
-        container = (LinearLayout) findViewById(R.id.contenedor);
-        container.addView(ejemplo);
+        //container = (LinearLayout) findViewById(R.id.contenedor);
 
+        Boton btn = new Boton(this);
+        btn.getButton("dato curioso",1313);
+        container.addView(btn);
 
     }
 
