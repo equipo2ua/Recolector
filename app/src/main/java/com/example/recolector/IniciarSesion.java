@@ -14,6 +14,7 @@ public class IniciarSesion  extends AppCompatActivity {
     Intent intencion;
     TextView registrarse;
     TextView forgotPassword;
+    Button iniciarSesion;
 
     //ejemplo dinámico
    // TextView ejemplo;
@@ -28,16 +29,19 @@ public class IniciarSesion  extends AppCompatActivity {
         forgotPassword = (TextView) findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(Listen);
 
+        iniciarSesion = (Button) findViewById(R.id.IS_iniciarSesionButton);
+        iniciarSesion.setOnClickListener(Listen);
+
         //ejemplo dinamico
        // ejemplo = new TextView(this);
         //ejemplo.setText("wena los k");
 
         //container = (LinearLayout) findViewById(R.id.contenedor);
-
+        /*
         Boton btn = new Boton(this);
         btn.getButton("dato curioso",1313);
         container.addView(btn);
-
+*/
     }
 
 
@@ -53,6 +57,10 @@ public class IniciarSesion  extends AppCompatActivity {
                      break;
                  case R.id.forgotPassword:
                      intencion = new Intent(IniciarSesion.this,ForgotPassword.class);
+                     startActivity(intencion);
+                     break;
+                 case R.id.IS_iniciarSesionButton:
+                     intencion = new Intent(IniciarSesion.this,Inicio.class);
                      startActivity(intencion);
                      break;
 
