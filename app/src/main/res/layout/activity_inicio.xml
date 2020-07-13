@@ -20,70 +20,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/header"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/primaryLight"
-                android:orientation="horizontal"
-                >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_gravity="center">
-
-                    <TextView
-                        android:id="@+id/hiUser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="¡Hola Andrés!"
-                        android:textSize="28dp" />
-
-                    <RatingBar
-                        android:id="@+id/ratingUser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:numStars="5"
-                        android:rating="4"
-                        android:scaleX="0.5"
-                        android:scaleY="0.5"
-                        android:theme="@style/RatingBar" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_gravity="center">
-
-                    <TextView
-                        android:id="@+id/travel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Viajes:  N/A"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:id="@+id/timeTravel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tiempo:  N/A"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:id="@+id/distanceUser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Distancia:  N/A"
-                        android:textSize="20dp" />
-
-
-                </LinearLayout>
-            </LinearLayout>
+                android:orientation="vertical"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
