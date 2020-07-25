@@ -87,13 +87,13 @@
 
             <Button
                 android:id="@+id/IS_iniciarSesionButton"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@color/primaryColor"
+                android:layout_margin="40dp"
+                android:background="@drawable/btn_primary"
                 android:text="Iniciar sesión"
-                android:layout_marginBottom="40dp"
-                android:textColor="@android:color/background_light" />
+                android:textColor="@drawable/text_button"
+                android:shadowRadius="@android:integer/config_longAnimTime"/>
 
 
         </LinearLayout>
