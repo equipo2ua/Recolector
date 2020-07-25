@@ -3,11 +3,23 @@ package com.example.recolector;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.example.recolector.io.Model.Solicitud;
+import com.example.recolector.io.Response.ApiAdapter;
+import com.example.recolector.io.Response.ApiService;
+import com.google.gson.Gson;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Inicio extends AppCompatActivity {
 
@@ -52,19 +64,43 @@ public class Inicio extends AppCompatActivity {
     }
 
     private void getSolicitudes(){
-        /*Esta funcionalidad está a la espera de la
-        habilitación del backend para ser modificada*/
-        int km = 21;
-        int id = 2055541;
-        String fecha = "28/08/2019 13:59";
-        String solicitud = "";
+        Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic YWRtaW46YWRtaW4xMjM0==");
+        call.enqueue(new Callback<List>() {
+            @Override
+            public void onResponse(Call<List> call, Response<List> response) {
+                if(!response.isSuccessful()){
+                    return;
+                }
 
-        /* Lo siguiente debe ser la forma de enviar los datos*/
-        solicitud += "A " + km +"km \n";
-        solicitud += "Número de Solicitud " + id +"\n";
-        solicitud += "Fecha Solicitud " + fecha +"\n";
-        /*Hasta aca!*/
-        for(int i=0;i<6;i++){cardSolicitud(solicitud);}
+                List<Solicitud> getList= response.body();
+                Gson gson = new Gson();
+                String json = gson.toJson(getList);
+                Solicitud[] list =  gson.fromJson(json,Solicitud[].class);
+
+                for (Solicitud item : list) {
+                    int km = 88;
+                    int id = item.getId();
+                    String fecha = item.getFecha_reciclaje();
+                    fecha += fecha + " " + item.getHora_reciclaje();
+                    String solicitud = "";
+
+
+                    solicitud += "A " + km + "km \n";
+                    solicitud += "Número de Solicitud " + id + "\n";
+                    solicitud += "Fecha Solicitud " + fecha + "\n";
+                    Log.d("Funciona", "" + solicitud);
+
+                    cardSolicitud(solicitud);
+                }
+
+
+            }
+            @Override
+            public void onFailure(Call<List> call, Throwable t) {
+                Log.d("Funciona","No funciona!!!!" + t);
+            }
+        });
+
     }
     private void getUser(){
         /*Esta funcionalidad está a la espera de la

@@ -89,7 +89,7 @@ public class IniciarSesion  extends AppCompatActivity {
 
                      IniciarSessionData sessionData = new IniciarSessionData(nombreSesion.getText().toString(),contraseñaSesion.getText().toString());
 
-                     Call<List> call = ApiAdapter.getApiService().postSesionRecolector("basic aGFuZHk6aGFuZHl4MTk5OA==",sessionData);
+                     Call<List> call = ApiAdapter.getApiService().postSesionRecolector("basic YWRtaW46YWRtaW4xMjM0==",sessionData);
 
                      call.enqueue(new Callback<List>() {
                          @Override
@@ -116,8 +116,8 @@ public class IniciarSesion  extends AppCompatActivity {
                                     Toast.makeText(IniciarSesion.this,"funciona",Toast.LENGTH_LONG).show();
 
 
-                                // Intent ir_a_inicio = new Intent(IniciarSesion.this,Inicio.class);
-                                 //startActivity(ir_a_inicio);
+                                Intent ir_a_inicio = new Intent(IniciarSesion.this,Inicio.class);
+                                startActivity(ir_a_inicio);
 
                              }
                          }
@@ -126,7 +126,7 @@ public class IniciarSesion  extends AppCompatActivity {
                          public void onFailure(Call<List> call, Throwable t) {
 
                              Log.d("cagada",""+t);
-                             Toast.makeText(IniciarSesion.this,"cagueloni",Toast.LENGTH_LONG).show();
+                             Toast.makeText(IniciarSesion.this,"No ha sido posible ingresar, revise los datos del formulario",Toast.LENGTH_LONG).show();
 
 
 

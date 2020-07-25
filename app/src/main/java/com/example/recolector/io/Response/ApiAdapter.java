@@ -8,6 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiAdapter {
 
         private static ApiService API_SERVICE;
+        private  static  ApiService GET;
 
         public static ApiService getApiService() {
 
@@ -20,7 +21,7 @@ public class ApiAdapter {
             OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
             httpClient.addInterceptor(logging);
 
-            String baseUrl = "http://192.168.0.10:8000/recolector/";
+            String baseUrl = "http://192.168.100.13:8000/recolector/";
 
             if (API_SERVICE == null) {
                 Retrofit retrofit = new Retrofit.Builder()
@@ -32,6 +33,27 @@ public class ApiAdapter {
             }
 
             return API_SERVICE;
+        }
+
+        public static ApiService getSolicitudes(){
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+            httpClient.addInterceptor(logging);
+
+            String baseUrl = "http://192.168.100.13:8000/solicitud/";
+
+            if (GET == null) {
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(baseUrl)
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .client(httpClient.build())
+                        .build();
+                GET = retrofit.create(ApiService.class);
+            }
+
+            return GET;
+
         }
 
 
