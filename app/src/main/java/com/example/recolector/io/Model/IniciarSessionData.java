@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class IniciarSessionData {
 
     @SerializedName("nombre")
-    private String nombre;
+    private String nombre; //editext nombre
 
     @SerializedName("contraseña")
     private String contraseña;

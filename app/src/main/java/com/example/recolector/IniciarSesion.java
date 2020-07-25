@@ -2,6 +2,7 @@ package com.example.recolector;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,9 +13,24 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.recolector.io.Model.DeserializarRecolector;
 import com.example.recolector.io.Model.IniciarSessionData;
 import com.example.recolector.io.Response.ApiAdapter;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSerializer;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -79,7 +95,27 @@ public class IniciarSesion  extends AppCompatActivity {
                          @Override
                          public void onResponse(Call<List> call, Response<List> response) {
                              if(response.isSuccessful()){
-                                 Toast.makeText(IniciarSesion.this,"funciona",Toast.LENGTH_LONG).show();
+
+                                 Gson gson = new Gson();
+                                 List data = response.body();
+
+                                 String listaJson = gson.toJson(data);
+
+
+                                 Type typelist = new TypeToken<ArrayList<DeserializarRecolector>>(){}.getType();
+                                 List<DeserializarRecolector> deserializarRecolector = gson.fromJson(listaJson,typelist);
+
+
+                                 for ( DeserializarRecolector d : deserializarRecolector) {
+                                     Log.d("miliii", "");
+                                 }
+
+                                    Log.d("miliii",""+deserializarRecolector.get(0).getId()); //con esto se accede al arreglo para obtener el json
+
+
+                                    Toast.makeText(IniciarSesion.this,"funciona",Toast.LENGTH_LONG).show();
+
+
                                 // Intent ir_a_inicio = new Intent(IniciarSesion.this,Inicio.class);
                                  //startActivity(ir_a_inicio);
 
@@ -91,6 +127,9 @@ public class IniciarSesion  extends AppCompatActivity {
 
                              Log.d("cagada",""+t);
                              Toast.makeText(IniciarSesion.this,"cagueloni",Toast.LENGTH_LONG).show();
+
+
+
                          }
                       });
 
@@ -102,6 +141,7 @@ public class IniciarSesion  extends AppCompatActivity {
              }
          }
      };
+
 
 
 

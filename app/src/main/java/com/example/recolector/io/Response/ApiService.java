@@ -1,7 +1,14 @@
 package com.example.recolector.io.Response;
 import com.example.recolector.io.Model.IniciarSessionData;
 import com.example.recolector.io.Model.RegistroRecolecciónData;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializer;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.http.Body;
@@ -14,6 +21,7 @@ public interface ApiService {
 
     @POST("registrarRecolector/")
     Call<List> postRegistrarRecolector(@Header("Authorization") String authorization,@Body RegistroRecolecciónData registroRecolecciónData);
+
 
 
     @POST("add_recolector/")

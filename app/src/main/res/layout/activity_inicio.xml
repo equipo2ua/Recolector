@@ -50,6 +50,7 @@
                     android:textColor="@android:color/background_light" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/card"
                 android:layout_width="fill_parent"
