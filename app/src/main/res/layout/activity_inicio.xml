@@ -45,9 +45,9 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:background="@color/primaryColor"
                     android:text="Ver más"
-                    android:textColor="@android:color/background_light" />
+                    android:background="@drawable/btn_primary"
+                    android:textColor="@drawable/text_button" />
 
             </LinearLayout>
 
