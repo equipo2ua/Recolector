@@ -1,64 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Inicio">
-
-    <ScrollView
+    android:fitsSystemWindows="true"
+    tools:openDrawer="end">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/primaryBackgroundColor"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
-
-        <LinearLayout
+        android:id="@+id/content"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            />
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/primaryBackgroundColor"
             android:orientation="vertical"
-            >
-            <LinearLayout
-                android:id="@+id/header"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:id="@+id/header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
 
-                <TextView
-                    android:id="@+id/text2"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¡Hay solicitudes cercanas!"
-                    android:textSize="25dp" />
+                    android:layout_margin="3dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
 
-                <Button
-                    android:id="@+id/verificar"
-                    android:layout_width="100dp"
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¡Hay solicitudes cercanas!"
+                        android:textSize="25dp" />
+
+                    <Button
+                        android:id="@+id/verificar"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Ver más"
+                        android:background="@drawable/btn_primary"
+                        android:textColor="@drawable/text_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:background="@color/primaryColor"
-                    android:text="Ver más"
-                    android:textColor="@android:color/background_light" />
+                    android:orientation="vertical"/>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/card"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"/>
-
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/header_navigation_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/nav_options"
+        android:layout_gravity="left"
+        >
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

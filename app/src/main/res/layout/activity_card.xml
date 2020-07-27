@@ -53,21 +53,21 @@
 
                 <Button
                     android:id="@+id/cancelarSolicitud"
-                    android:layout_width="100dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:background="@color/primaryColor"
                     android:text="Cancelar"
-                    android:textColor="@android:color/background_light" />
+                    android:background="@drawable/btn_primary"
+                    android:textColor="@drawable/text_button" />
 
                 <Button
                     android:id="@+id/iniciarSolicitud"
-                    android:layout_width="100dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:background="@color/primaryColor"
                     android:text="Verificar"
-                    android:textColor="@android:color/background_light" />
+                    android:background="@drawable/btn_primary"
+                    android:textColor="@drawable/text_button" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
