@@ -81,7 +81,7 @@ public class Inicio extends AppCompatActivity {
                     int km = 88;
                     int id = item.getId();
                     String fecha = item.getFecha_reciclaje();
-                    fecha += fecha + " " + item.getHora_reciclaje();
+                    fecha += " " + item.getHora_reciclaje();
                     String solicitud = "";
 
 

@@ -116,8 +116,8 @@ public class IniciarSesion  extends AppCompatActivity {
                                     Toast.makeText(IniciarSesion.this,"funciona",Toast.LENGTH_LONG).show();
 
 
-                               // Intent ir_a_inicio = new Intent(IniciarSesion.this,Inicio.class);
-                                //startActivity(ir_a_inicio);
+                                    Intent ir_a_inicio = new Intent(IniciarSesion.this,Inicio.class);
+                                    startActivity(ir_a_inicio);
 
                              }
                          }

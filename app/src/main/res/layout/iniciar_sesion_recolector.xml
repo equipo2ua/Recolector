@@ -42,7 +42,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     />
-                
+
                 <TextView
                     android:id="@+id/IS_registrarse"
                     android:layout_width="wrap_content"

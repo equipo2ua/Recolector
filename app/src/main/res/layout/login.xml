@@ -19,60 +19,123 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Socio Recolector"
-                android:textAlignment="center"
-                android:textSize="30dp"
-                android:background="@color/primaryDarkColor"
-                android:textColor="#ffffff"
-                android:padding="10dp"/>
-            />
 
             <EditText
-                android:id="@+id/IS_nombre"
-                android:inputType="text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre de usuario"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="55dp"
-                />
-            <EditText
-                android:id="@+id/IS_contraseña"
-                android:inputType="textPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Contraseña"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="35dp"/>
-            <TextView
-                android:id="@+id/forgotPassword"
+                android:id="@+id/FormNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Olvidaste la contraseña?"
-                android:textAlignment="center"
-                android:textSize="17dp"
-                android:layout_marginTop="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:width="250dp"
+                android:height="42dp"
+                android:hint="Nombres" />
+
+            <EditText
+                android:id="@+id/FormApellido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Apellidos"
+                android:layout_gravity="center"
+                android:width="250dp"
+                android:height="42dp"
+                android:layout_marginTop="20dp"
+                />
+            <EditText
+                android:id="@+id/FormCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Correo electrónico"
+                android:layout_gravity="center"
+                android:width="250dp"
+                android:height="42dp"
+                android:layout_marginTop="20dp"
+                android:inputType="textEmailAddress"
+                />
+            <EditText
+                android:id="@+id/FormTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Teléfono"
+                android:layout_gravity="center"
+                android:width="250dp"
+                android:height="42dp"
+                android:layout_marginTop="20dp"
+                />
+            <EditText
+                android:id="@+id/FormComuna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Comuna"
+                android:layout_gravity="center"
+                android:width="250dp"
+                android:height="42dp"
+                android:layout_marginTop="20dp"
+                />
+            <EditText
+                android:id="@+id/FormCalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Calle y numeración"
+                android:layout_gravity="center"
+                android:width="250dp"
+                android:height="42dp"
+                android:layout_marginTop="20dp"
+                />
+            <EditText
+                android:id="@+id/FormContraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:layout_gravity="center"
+                android:width="250dp"
+                android:height="42dp"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                />
+            <EditText
+                android:id="@+id/FormRepetirContraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Repetir contraseña"
+                android:layout_gravity="center"
+                android:width="250dp"
+                android:height="42dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:inputType="textPassword"
                 />
 
-
-            <Button
-                android:id="@+id/IS_iniciarSesionButton"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:background="@drawable/btn_primary"
-                android:text="Iniciar sesión"
-                android:textColor="@drawable/text_button"
-                android:shadowRadius="@android:integer/config_longAnimTime"/>
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                >
+
+                <Button
+                    android:id="@+id/FormCancelarButton"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:layout_marginRight="50dp"
+                    android:textSize="12dp"
+                    android:textColor="@drawable/text_button"
+                    android:background="@drawable/btn_primary"
+                    />
+                <Button
+                    android:id="@+id/FormRegistrarseButton"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:text="Registrarse"
+                    android:textSize="12dp"
+                    android:textColor="@drawable/text_button"
+                    android:background="@drawable/btn_primary"
+                    />
+
+
+            </LinearLayout>
+
 
 
         </LinearLayout>

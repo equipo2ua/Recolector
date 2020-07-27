@@ -53,7 +53,7 @@
 
                 <Button
                     android:id="@+id/cancelarSolicitud"
-                    android:layout_width="100dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
                     android:text="Cancelar"
@@ -62,7 +62,7 @@
 
                 <Button
                     android:id="@+id/iniciarSolicitud"
-                    android:layout_width="100dp"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Verificar"
