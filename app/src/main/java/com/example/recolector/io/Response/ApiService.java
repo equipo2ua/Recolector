@@ -23,11 +23,13 @@ public interface ApiService {
     Call<List> postRegistrarRecolector(@Header("Authorization") String authorization,@Body RegistroRecolecciónData registroRecolecciónData);
 
 
-    @POST("add_recolector/")
+    @POST("iniciarSesionRecolector/")
     Call<List> postSesionRecolector(@Header("Authorization") String authorization, @Body IniciarSessionData sessionData);
 
     @GET("listar-solicitudes/")
     Call<List> listSolicitudes(@Header("Authorization") String authorization);
+
+    //@GET("verDetalleSolicitud")
 
 
 }

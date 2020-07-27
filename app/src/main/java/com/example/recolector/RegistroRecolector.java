@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,35 +58,49 @@ public class RegistroRecolector extends AppCompatActivity {
                     password = (EditText) findViewById(R.id.FormContraseña);
                     repetirpassword = (EditText) findViewById(R.id.FormRepetirContraseña);
 
-                    RegistroRecolecciónData registroRecolecciónData = new RegistroRecolecciónData(
-                            nombre.getText().toString(),
-                            apellido.getText().toString(),
-                            correo.getText().toString(),
-                            telefono.getText().toString(),
-                            comuna.getText().toString(),
-                            calleYnumero.getText().toString(),
-                            password.getText().toString(),
-                            repetirpassword.getText().toString()
-                    );
+                    if(     nombre.getText().toString().equals("") || apellido.getText().toString().equals("") ||
+                            repetirpassword.getText().toString().equals("") ||correo.getText().toString().equals("") ||
+                            password.getText().toString().equals("") ||telefono.getText().toString().equals("") ||
+                            calleYnumero.getText().toString().equals("") ||comuna.getText().toString().equals("") ){
 
-                    Call<List> call = ApiAdapter.getApiService().postRegistrarRecolector("basic aGFuZHk6aGFuZHl4MTk5OA==",registroRecolecciónData);
 
-                    call.enqueue(new Callback<List>() {
-                        @Override
-                        public void onResponse(Call<List> call, Response<List> response) {
-                            if(response.isSuccessful()){
+                        Toast.makeText(RegistroRecolector.this,"debes completar todos los campos",Toast.LENGTH_LONG).show();
 
-                                Log.d("funcionandooo","tamosgud" );
-                                intencion = new Intent(RegistroRecolector.this,IniciarSesion.class);
-                                startActivity(intencion);
+                    }else{
+
+                        RegistroRecolecciónData registroRecolecciónData = new RegistroRecolecciónData(
+                                nombre.getText().toString(),
+                                apellido.getText().toString(),
+                                correo.getText().toString(),
+                                telefono.getText().toString(),
+                                comuna.getText().toString(),
+                                calleYnumero.getText().toString(),
+                                password.getText().toString(),
+                                repetirpassword.getText().toString()
+                        );
+
+                        Call<List> call = ApiAdapter.getApiService().postRegistrarRecolector("basic aGFuZHk6aGFuZHl4MTk5OA==",registroRecolecciónData);
+
+                        call.enqueue(new Callback<List>() {
+                            @Override
+                            public void onResponse(Call<List> call, Response<List> response) {
+                                if(response.isSuccessful()){
+
+                                    Log.d("funcionandooo","tamosgud" );
+                                    intencion = new Intent(RegistroRecolector.this,IniciarSesion.class);
+                                    startActivity(intencion);
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<List> call, Throwable t) {
-                            Log.d("onfailcall",""+t );
-                        }
-                    });
+                            @Override
+                            public void onFailure(Call<List> call, Throwable t) {
+                                Log.d("onfailcall",""+t );
+                            }
+                        });
+
+                    }break;
+
+
 
             }
         }

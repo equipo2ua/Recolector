@@ -64,35 +64,36 @@ public class Inicio extends AppCompatActivity {
     }
 
     private void getSolicitudes(){
-        Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic YWRtaW46YWRtaW4xMjM0==");
-        call.enqueue(new Callback<List>() {
-            @Override
-            public void onResponse(Call<List> call, Response<List> response) {
-                if(!response.isSuccessful()){
-                    return;
-                }
+        Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic aGFuZHk6aGFuZHl4MTk5OA==");
+                    call.enqueue(new Callback<List>() {
+                        @Override
+                        public void onResponse(Call<List> call, Response<List> response) {
+                            if(!response.isSuccessful()) {
+                                Log.d("elbody",""+response.body());
 
-                List<Solicitud> getList= response.body();
-                Gson gson = new Gson();
-                String json = gson.toJson(getList);
-                Solicitud[] list =  gson.fromJson(json,Solicitud[].class);
+                               return;
+                                }
 
-                for (Solicitud item : list) {
-                    int km = 88;
-                    int id = item.getId();
-                    String fecha = item.getFecha_reciclaje();
-                    fecha += fecha + " " + item.getHora_reciclaje();
-                    String solicitud = "";
+                            List<Solicitud> getList = response.body();
+                            Gson gson = new Gson();
+                            String json = gson.toJson(getList);
+                            Solicitud[] list = gson.fromJson(json, Solicitud[].class);
+
+                            for (Solicitud item : list) {
+                                int km = 88;
+                                int id = item.getId();
+                                String fecha = item.getFecha_reciclaje();
+                                fecha += fecha + " " + item.getHora_reciclaje();
+                                String solicitud = "";
 
 
-                    solicitud += "A " + km + "km \n";
-                    solicitud += "Número de Solicitud " + id + "\n";
-                    solicitud += "Fecha Solicitud " + fecha + "\n";
-                    Log.d("Funciona", "" + solicitud);
+                                solicitud += "A " + km + "km \n";
+                                solicitud += "Número de Solicitud " + id + "\n";
+                                solicitud += "Fecha Solicitud " + fecha + "\n";
+                                Log.d("Funciona", "" + solicitud);
 
-                    cardSolicitud(solicitud);
-                }
-
+                                cardSolicitud(solicitud);
+                            }
 
             }
             @Override
