@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/menu1"
+            android:title="Lista de Solicitudes"
+            android:icon="@drawable/ic_solicitud" />
+        <item android:id="@+id/menu2"
+            android:title="Zona de Servicios"
+            android:icon="@drawable/ic_map" />
+        <item android:id="@+id/menu3"
+            android:title="Historial"
+            android:icon="@drawable/ic_history" />
+
+    </group>
+
+    <item  android:title="Otras Opciones">
+        <menu>
+            <item android:title="Perfil"
+                android:id="@+id/menu_perfil"
+                android:icon="@drawable/ic_perfil"/>
+            <item android:title="Centro de Ayuda"
+                android:id="@+id/menu_help"
+                android:icon="@drawable/ic_help"/>
+            <item android:title="Configuraciones"
+                android:id="@+id/menu_conf"
+                android:icon="@drawable/ic_configuration"/>
+        </menu>
+
+    </item>
+    <item  android:title="Sesión">
+        <menu>
+            <item android:title="Cerrar Sesion"
+                android:id="@+id/menu_logaout"
+                android:icon="@drawable/ic_exit"/>
+           
+        </menu>
+
+    </item>
+
+
+</menu>
