@@ -5,14 +5,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.recolector.io.Model.Solicitud;
 import com.example.recolector.io.Response.ApiAdapter;
@@ -32,7 +36,7 @@ public class Inicio extends AppCompatActivity {
     private LinearLayout encabezado;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-
+    private Button Cancelar, Verificar, VerMas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +51,19 @@ public class Inicio extends AppCompatActivity {
         getUser();
         getSolicitudes();
 
+        VerMas = (Button) findViewById(R.id.verMas);
+
+        VerMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSolicitudes();
+                Toast.makeText(Inicio.this,"Datos Actualizados",Toast.LENGTH_SHORT);
+            }
+        });
+
     }
+
+
 
 
     private void setEncabezado(String name, float rating, String statisticsUser){
@@ -75,10 +91,29 @@ public class Inicio extends AppCompatActivity {
         textCard.setText(String.valueOf(detail));
 
         listSolicitudes.addView(linearLayout);
+        Cancelar = (Button) listSolicitudes.findViewById(R.id.cancelarSolicitud);
+        Verificar = (Button) listSolicitudes.findViewById(R.id.verDetalle);
+
+        Cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        Verificar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Inicio.this,DetalleSolicitud.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
+
+
     private void getSolicitudes(){
-        Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic YWRtaW46YWRtaW4xMjM0==");
+        Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic V2VuYWFhYToxMjM0");
         call.enqueue(new Callback<List>() {
             @Override
             public void onResponse(Call<List> call, Response<List> response) {

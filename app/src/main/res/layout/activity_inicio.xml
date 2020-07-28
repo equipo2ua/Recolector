@@ -51,7 +51,7 @@
                         android:textSize="25dp" />
 
                     <Button
-                        android:id="@+id/verificar"
+                        android:id="@+id/verMas"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

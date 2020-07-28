@@ -81,7 +81,7 @@ public class RegistroRecolector extends AppCompatActivity {
                                     repetirpassword.getText().toString()
                             );
 
-                            Call<List> call = ApiAdapter.getApiService().postRegistrarRecolector("basic aGFuZHk6aGFuZHl4MTk5OA==",registroRecolecciónData);
+                            Call<List> call = ApiAdapter.getApiService().postRegistrarRecolector("basic V2VuYWFhYToxMjM0",registroRecolecciónData);
 
                             call.enqueue(new Callback<List>() {
                                 @Override

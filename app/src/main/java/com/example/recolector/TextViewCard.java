@@ -1,8 +1,11 @@
 package com.example.recolector;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
@@ -11,10 +14,13 @@ public class TextViewCard extends LinearLayout {
 
     private TextView idSolicitud, distance , dateSolicitud;
 
+
     public TextViewCard(Context context) {
         super(context);
         initChilds();
+
     }
+
 
     public TextViewCard(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);

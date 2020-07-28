@@ -28,7 +28,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@drawable/shipment" />
+                    android:src="@drawable/ic_help" />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -61,13 +61,15 @@
                     android:textColor="@drawable/text_button" />
 
                 <Button
-                    android:id="@+id/iniciarSolicitud"
+                    android:id="@+id/verDetalle"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Verificar"
                     android:background="@drawable/btn_primary"
-                    android:textColor="@drawable/text_button" />
+                    android:textColor="@drawable/text_button"
+                    />
+
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
