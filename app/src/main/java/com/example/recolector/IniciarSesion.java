@@ -25,9 +25,8 @@ import retrofit2.Response;
 public class IniciarSesion  extends AppCompatActivity {
 
     Intent intencion;
-    TextView registrarse;
     TextView forgotPassword;
-    Button iniciarSesion;
+    Button iniciarSesion, registrarse;
     EditText nombreSesion,contraseñaSesion;
     //ejemplo dinámico
    // TextView ejemplo;
@@ -37,7 +36,7 @@ public class IniciarSesion  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.iniciar_sesion_recolector);
-        registrarse = (TextView) findViewById(R.id.IS_registrarse);
+        registrarse = (Button) findViewById(R.id.IS_registrarse);
         registrarse.setOnClickListener(Listen);
         forgotPassword = (TextView) findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(Listen);

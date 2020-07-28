@@ -44,73 +44,74 @@
                     android:layout_marginBottom="5dp"
                     />
 
-                <TextView
-                    android:id="@+id/IS_registrarse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Registrarse"
-                    android:textSize="16dp"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"
-                    />
-
             </LinearLayout>
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view"
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <EditText
                         android:id="@+id/IS_nombre"
-                        android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Nombre de usuario"
-                        android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="40dp"
-                        />
+                        android:layout_marginRight="20dp"
+                        android:hint="Correo electronico"
+                        android:inputType="text"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
                     <EditText
                         android:id="@+id/IS_contraseña"
-                        android:inputType="textPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Contraseña"
-                        android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="35dp"/>
+                        android:layout_marginTop="35dp"
+                        android:layout_marginRight="20dp"
+                        android:hint="Contraseña"
+                        android:inputType="textPassword"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
                     <TextView
                         android:id="@+id/forgotPassword"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="¿Olvidaste la contraseña?"
                         android:layout_gravity="center"
-                        android:textSize="17dp"
                         android:layout_marginTop="35dp"
-                        />
-
+                        android:text="¿Olvidaste la contraseña?"
+                        android:textSize="17dp" />
 
                     <Button
                         android:id="@+id/IS_iniciarSesionButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/btn_primary"
+                        android:shadowRadius="@android:integer/config_longAnimTime"
+                        android:text="Iniciar sesión"
+                        android:textColor="@drawable/text_button" />
+                    <Button
+                        android:id="@+id/IS_registrarse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_margin="40dp"
                         android:background="@drawable/btn_primary"
-                        android:text="Iniciar sesión"
-                        android:textColor="@drawable/text_button"
-                        android:shadowRadius="@android:integer/config_longAnimTime"/>
+                        android:shadowRadius="@android:integer/config_longAnimTime"
+                        android:text="Registrarse"
+                        android:textColor="@drawable/text_button" />
+
+
 
 
                 </LinearLayout>
