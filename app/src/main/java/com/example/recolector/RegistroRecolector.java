@@ -68,35 +68,60 @@ public class RegistroRecolector extends AppCompatActivity {
 
                     }else{
 
-                        RegistroRecolecciónData registroRecolecciónData = new RegistroRecolecciónData(
-                                nombre.getText().toString(),
-                                apellido.getText().toString(),
-                                correo.getText().toString(),
-                                telefono.getText().toString(),
-                                comuna.getText().toString(),
-                                calleYnumero.getText().toString(),
-                                password.getText().toString(),
-                                repetirpassword.getText().toString()
-                        );
+                        if(password.getText().toString().equals(repetirpassword.getText().toString())){
 
-                        Call<List> call = ApiAdapter.getApiService().postRegistrarRecolector("basic aGFuZHk6aGFuZHl4MTk5OA==",registroRecolecciónData);
+                            RegistroRecolecciónData registroRecolecciónData = new RegistroRecolecciónData(
+                                    nombre.getText().toString(),
+                                    apellido.getText().toString(),
+                                    correo.getText().toString(),
+                                    telefono.getText().toString(),
+                                    comuna.getText().toString(),
+                                    calleYnumero.getText().toString(),
+                                    password.getText().toString(),
+                                    repetirpassword.getText().toString()
+                            );
 
-                        call.enqueue(new Callback<List>() {
-                            @Override
-                            public void onResponse(Call<List> call, Response<List> response) {
-                                if(response.isSuccessful()){
+                            Call<List> call = ApiAdapter.getApiService().postRegistrarRecolector("basic aGFuZHk6aGFuZHl4MTk5OA==",registroRecolecciónData);
 
-                                    Log.d("funcionandooo","tamosgud" );
-                                    intencion = new Intent(RegistroRecolector.this,IniciarSesion.class);
-                                    startActivity(intencion);
+                            call.enqueue(new Callback<List>() {
+                                @Override
+                                public void onResponse(Call<List> call, Response<List> response) {
+                                    if(response.isSuccessful()){
+
+                                        Log.d("funcionandooo","tamosgud" );
+                                        intencion = new Intent(RegistroRecolector.this,IniciarSesion.class);
+                                        startActivity(intencion);
+
+                                    }else{
+
+                                        if (response.code() == 400){
+
+                                            Toast.makeText(RegistroRecolector.this,"el correo ya existe, ingresa otro",Toast.LENGTH_LONG).show();
+                                            correo.setText("");
+                                        }
+
+                                    }
+
                                 }
-                            }
 
-                            @Override
-                            public void onFailure(Call<List> call, Throwable t) {
-                                Log.d("onfailcall",""+t );
-                            }
-                        });
+                                @Override
+                                public void onFailure(Call<List> call, Throwable t) {
+
+
+
+                                    Log.d("onfailcall",""+t );
+
+                                }
+                            });
+                        }else{
+
+                            Toast.makeText(RegistroRecolector.this,"Las contraseñas no coinciden",Toast.LENGTH_LONG).show();
+                            password.setText("");
+                            repetirpassword.setText("");
+
+                        }
+
+
 
                     }break;
 

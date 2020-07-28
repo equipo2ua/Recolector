@@ -94,6 +94,22 @@ public class IniciarSesion  extends AppCompatActivity {
                                       intencion = new Intent(IniciarSesion.this,Inicio.class);
                                       startActivity(intencion);
 
+                                  }else{
+
+                                      if(response.code() == 400){
+                                          //el correo no existe
+                                            if (true){
+                                                Toast.makeText(IniciarSesion.this,"EL CORREO NO EXISTE O FORMATO INCORRECTO",Toast.LENGTH_SHORT).show();
+                                            }else{
+
+                                                Toast.makeText(IniciarSesion.this,"CONTRASEÑA INCORRECTA",Toast.LENGTH_SHORT).show();
+                                            }
+
+                                          Log.d("longitud","");
+
+
+                                      }
+
                                   }
                               }
 
