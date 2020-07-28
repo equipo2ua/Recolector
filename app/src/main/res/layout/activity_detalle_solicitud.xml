@@ -16,14 +16,14 @@
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Detalle de solicitud"
-                    android:textSize="60dp"
+                    android:textSize="45sp"
                     android:textColor="@color/WhiteTextColor"
                     android:background="@color/primaryDarkColor"/>
 
@@ -31,13 +31,13 @@
             
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:background="@drawable/border_style">
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/ic_help"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"/>
@@ -50,29 +50,29 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="35dp"
                         android:text="Datos de Solicitud"
-                        android:textSize="40sp"
+                        android:textSize="25sp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/StateTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Estado:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
                     <TextView
                         android:id="@+id/RequestNumberTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Numero de solicitud:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
                     <TextView
                         android:id="@+id/RequestDateTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Fecha Solicitud:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
 
                 </LinearLayout>
 
@@ -80,13 +80,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:background="@drawable/border_style">
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/ic_help"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"/>
@@ -99,28 +99,28 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="35dp"
                         android:text="Reciclador"
-                        android:textSize="40sp"
+                        android:textSize="25sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:id="@+id/NameTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nombre:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
                     <TextView
                         android:id="@+id/PhoneNumberTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Telefono:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
                     <TextView
                         android:id="@+id/RatingTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Calificacion:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
 
                 </LinearLayout>
 
@@ -128,13 +128,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:background="@drawable/border_style">
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/ic_calculadora"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"/>
@@ -147,28 +147,28 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="35dp"
                         android:text="Ubicacion"
-                        android:textSize="40sp"
+                        android:textSize="25sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:id="@+id/AddressTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Direccion:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
                     <TextView
                         android:id="@+id/DistrictTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Comuna:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
                     <TextView
                         android:id="@+id/CityTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Region:"
-                        android:textSize="20sp"/>
+                        android:text=""
+                        android:textSize="18sp"/>
 
                 </LinearLayout>
 
@@ -183,21 +183,22 @@
 
                 <Button
                     android:id="@+id/DenyButton"
-                    android:layout_width="200dp"
+                    android:layout_width="150dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/button_style"
+                    android:background="@drawable/btn_primary"
                     android:text="Rechazar"
-                    android:textSize="25sp"
-                    android:layout_marginRight="20dp"
-                    />
+                    android:textSize="20sp"
+                    android:textColor="@drawable/text_button"
+                    android:layout_marginRight="20dp"/>
 
                 <Button
                     android:id="@+id/AcceptButton"
-                    android:layout_width="200dp"
+                    android:layout_width="150dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/button_style"
+                    android:background="@drawable/btn_primary"
                     android:text="Aceptar"
-                    android:textSize="25sp" />
+                    android:textSize="20sp"
+                    android:textColor="@drawable/text_button"/>
 
             </LinearLayout>
 
