@@ -61,7 +61,8 @@ public class Inicio extends AppCompatActivity {
         VerMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSolicitudes();
+                Intent intencion = new Intent(Inicio.this,Inicio.class);
+                startActivity(intencion);
                 Toast.makeText(Inicio.this,"Datos Actualizados",Toast.LENGTH_SHORT);
             }
         });
@@ -97,8 +98,10 @@ public class Inicio extends AppCompatActivity {
         textCard.setText(String.valueOf(detail));
 
         listSolicitudes.addView(linearLayout);
-        Cancelar = (Button) listSolicitudes.findViewById(R.id.cancelarSolicitud);
-        Verificar = (Button) listSolicitudes.findViewById(R.id.verDetalle);
+
+        // se captura la id de los botones a través del layout que contiene los cardview (linearLayout)
+        Cancelar = (Button) linearLayout.findViewById(R.id.cancelarSolicitud);
+        Verificar = (Button) linearLayout.findViewById(R.id.verDetalle);
 
         Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +122,9 @@ public class Inicio extends AppCompatActivity {
 
 
     private void getSolicitudes(){
+
         Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic YWRtaW5pc3RyYWRvcjphZG1pbmlzdHJhZG9y==");
+
         call.enqueue(new Callback<List>() {
             @Override
             public void onResponse(Call<List> call, Response<List> response) {

@@ -21,7 +21,11 @@ public class ApiAdapter {
             OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
             httpClient.addInterceptor(logging);
 
+<<<<<<< HEAD
             String baseUrl = "http://192.168.100.13:8000/recolector/";
+=======
+            String baseUrl = "http://192.168.0.10:8000/recolector/";
+>>>>>>> 2b603bd4fad1e9876be360c8dfb1ea27bbabdd2b
 
             if (API_SERVICE == null) {
                 Retrofit retrofit = new Retrofit.Builder()
@@ -41,7 +45,11 @@ public class ApiAdapter {
             OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
             httpClient.addInterceptor(logging);
 
+<<<<<<< HEAD
             String baseUrl = "http://192.168.100.13:8000/solicitud/";
+=======
+            String baseUrl = "http://192.168.0.10:8000/solicitud/";
+>>>>>>> 2b603bd4fad1e9876be360c8dfb1ea27bbabdd2b
 
             if (GET == null) {
                 Retrofit retrofit = new Retrofit.Builder()
