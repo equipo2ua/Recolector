@@ -49,6 +49,11 @@ public class IniciarSesion  extends AppCompatActivity {
 
 
     }
+    public int getLength(List datos){
+        Gson gson = new Gson();
+        String  jsonData = gson.toJson(datos);
+        return jsonData.length();
+    }
 
 
      final View.OnClickListener Listen = new View.OnClickListener() {
@@ -88,27 +93,24 @@ public class IniciarSesion  extends AppCompatActivity {
                           call.enqueue(new Callback<List>() {
                               @Override
                               public void onResponse(Call<List> call, Response<List> response) {
-                                  if(response.isSuccessful()){
+                                  if (response.isSuccessful()) {
 
-                                      intencion = new Intent(IniciarSesion.this,Inicio.class);
+                                      intencion = new Intent(IniciarSesion.this, Inicio.class);
                                       startActivity(intencion);
 
-                                  }else{
+                                  } else {
 
-                                      if(response.code() == 400){
-                                          //el correo no existe
-                                            if (true){
-                                                Toast.makeText(IniciarSesion.this,"EL CORREO NO EXISTE O FORMATO INCORRECTO",Toast.LENGTH_SHORT).show();
-                                            }else{
+                                      if (response.code() == 400) {
 
-                                                Toast.makeText(IniciarSesion.this,"CONTRASEÑA INCORRECTA",Toast.LENGTH_SHORT).show();
-                                            }
 
-                                          Log.d("longitud","");
+                                          Toast.makeText(IniciarSesion.this, "El correo no existe ", Toast.LENGTH_SHORT).show();
 
+
+                                         } else {
+
+                                          Toast.makeText(IniciarSesion.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
 
                                       }
-
                                   }
                               }
 

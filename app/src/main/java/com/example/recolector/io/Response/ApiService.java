@@ -1,6 +1,7 @@
 package com.example.recolector.io.Response;
 import com.example.recolector.io.Model.IniciarSessionData;
 import com.example.recolector.io.Model.RegistroRecolecciónData;
+import com.example.recolector.io.Model.DataRecolector;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializer;
@@ -30,6 +31,7 @@ public interface ApiService {
     Call<List> listSolicitudes(@Header("Authorization") String authorization);
 
     //@GET("verDetalleSolicitud")
-
+    @POST("get-profile/")
+    Call<List<DataRecolector>> getRecolector(@Header("Authorization") String authorization, @Body DataRecolector dataRecolector);
 
 }

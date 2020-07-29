@@ -13,11 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.recolector.io.Model.DataRecolector;
 import com.example.recolector.io.Model.Solicitud;
 import com.example.recolector.io.Response.ApiAdapter;
 import com.example.recolector.io.Response.ApiService;
@@ -34,9 +36,11 @@ public class Inicio extends AppCompatActivity {
 
     private ViewGroup listSolicitudes;
     private LinearLayout encabezado;
+    private ImageView image;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Button Cancelar, Verificar, VerMas;
+    private int idRecolector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +52,12 @@ public class Inicio extends AppCompatActivity {
         setToolbar();
         drawerLayout =findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navView);
-        getUser();
+        getProfile();
         getSolicitudes();
 
-        VerMas = (Button) findViewById(R.id.verMas);
 
+
+        VerMas = (Button) findViewById(R.id.verMas);
         VerMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +66,7 @@ public class Inicio extends AppCompatActivity {
                 Toast.makeText(Inicio.this,"Datos Actualizados",Toast.LENGTH_SHORT);
             }
         });
+
 
     }
 
@@ -113,7 +119,9 @@ public class Inicio extends AppCompatActivity {
 
 
     private void getSolicitudes(){
-        Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic YWRtaW5pc3RyYWRvcjphZG1pbmlzdHJhZG9y");
+
+        Call<List> call = ApiAdapter.getSolicitudes().listSolicitudes("basic YWRtaW5pc3RyYWRvcjphZG1pbmlzdHJhZG9y==");
+
         call.enqueue(new Callback<List>() {
             @Override
             public void onResponse(Call<List> call, Response<List> response) {
@@ -151,24 +159,56 @@ public class Inicio extends AppCompatActivity {
         });
 
     }
-    private void getUser(){
-        /*Esta funcionalidad está a la espera de la
-        habilitación del backend para ser modificada*/
-        String name = "Andrés";
-        int travel = 38;
-        int time = 25;
-        int distance = 34;
-        float rating = (float) 4.5;
 
-        String nameText = "";
-        String statistics = "";
-        /* Lo siguiente debe ser la forma de enviar los datos*/
-        nameText += "¡Hola " + name +"!\n";
-        statistics += "Viajes " + travel +"\n";
-        statistics += "Tiempo " + time +" hrs\n";
-        statistics += "Distancia " + distance +" Km\n\n";
-        /*Hasta aca!*/
-        setEncabezado(nameText,rating,statistics);
+    private void getProfile(){
+        final DataRecolector dataRecolector =new DataRecolector(1);
+        Call<List<DataRecolector>> call = ApiAdapter.getApiService().getRecolector("basic YWRtaW5pc3RyYWRvcjphZG1pbmlzdHJhZG9y", dataRecolector);
+        call.enqueue(new Callback<List<DataRecolector>>() {
+            @Override
+            public void onResponse(Call<List<DataRecolector>> call, Response<List<DataRecolector>> response) {
+                if(!response.isSuccessful()){
+                    return;
+                }
+
+                Log.d("Funciona", "Esta wea funciionaa!!" );
+                List<DataRecolector> body = response.body();
+
+                for(DataRecolector p:body){
+                    String name = p.getNombre_recolector();
+                    float rating = p.getCalificacion_recolector();
+                    int travel = 38;
+                    int time = 25;
+                    int distance = 34;
+
+                    String nameText = "";
+                    String statistics = "";
+                    /* Lo siguiente debe ser la forma de enviar los datos*/
+                    nameText += "¡Hola " + name +"!\n";
+                    statistics += "Viajes " + travel +"\n";
+                    statistics += "Tiempo " + time +" hrs\n";
+                    statistics += "Distancia " + distance +" Km\n\n";
+                    /*Hasta aca!*/
+                    idRecolector =p.getId();
+
+                    setEncabezado(nameText,rating,statistics);
+                }
+                image = (ImageView) findViewById(R.id.viewProfile);
+                image.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(Inicio.this, Perfil.class);
+                        i.putExtra("recolector",idRecolector);
+                        startActivity(i);
+                    }
+                });
+
+            }
+
+            @Override
+            public void onFailure(Call<List<DataRecolector>> call, Throwable t) {
+
+            }
+        });
     }
 
     private void setToolbar(){
