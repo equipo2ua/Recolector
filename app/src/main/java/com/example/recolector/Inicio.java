@@ -103,7 +103,7 @@ public class Inicio extends AppCompatActivity {
         Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Inicio.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT);
+                Toast.makeText(Inicio.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT).show();
             }
         });
         Verificar.setOnClickListener(new View.OnClickListener() {

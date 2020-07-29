@@ -43,14 +43,14 @@ public class DetalleSolicitud extends AppCompatActivity {
         DenyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DetalleSolicitud.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT);
+                Toast.makeText(DetalleSolicitud.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT).show();
             }
         });
 
         AcceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DetalleSolicitud.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT);
+                Toast.makeText(DetalleSolicitud.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT).show();
             }
         });
 
