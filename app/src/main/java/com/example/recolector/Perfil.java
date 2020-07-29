@@ -1,9 +1,13 @@
 package com.example.recolector;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -17,6 +21,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Perfil extends AppCompatActivity {
+    private DrawerLayout drawerLayout;
     private int idRecolector;
     private RatingBar calif;
     private TextView name;
@@ -32,6 +37,8 @@ public class Perfil extends AppCompatActivity {
         setContentView(R.layout.profile);
         idRecolector = getIntent().getExtras().getInt("recolector");
         getProfile();
+        setToolbar();
+        drawerLayout =findViewById(R.id.drawer_layout);
         calif = (RatingBar) findViewById(R.id.rating);
         name =(TextView) findViewById(R.id.Profilename);
         lastName =(TextView) findViewById(R.id.ProfilelastName);
@@ -70,4 +77,22 @@ public class Perfil extends AppCompatActivity {
             }
         });
     }
+    private void setToolbar(){
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_home);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

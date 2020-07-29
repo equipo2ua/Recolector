@@ -1,111 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ScrollView
-        android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="end">
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            />
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            tools:layout_editor_absoluteX="8dp"
-            android:layout_margin="10dp"
-            tools:layout_editor_absoluteY="8dp">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_gravity="center_horizontal" />
-            <RatingBar
-                android:id="@+id/rating"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="5"
-                android:theme="@style/RatingBar"/>
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombres"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/Profilename"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Apellidos"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/ProfilelastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dirección"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/Profileaddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sexo"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/Profilegender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Número de teléfono"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/Profilephone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Correo electrónico"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/ProfileEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </ScrollView>
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="8dp"
+                android:layout_margin="10dp"
+                tools:layout_editor_absoluteY="8dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_user"/>
+                <RatingBar
+                    android:id="@+id/rating"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:theme="@style/RatingBar"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombres"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/Profilename"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Apellidos"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/ProfilelastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/Profileaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sexo"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/Profilegender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Número de teléfono"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/Profilephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo electrónico"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/ProfileEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/header_navigation_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/nav_options"
+        android:layout_gravity="left"
+        >
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
