@@ -83,7 +83,7 @@ public class IniciarSesion  extends AppCompatActivity {
 
                           IniciarSessionData sessionData = new IniciarSessionData(nombreSesion.getText().toString(),contraseñaSesion.getText().toString());
 
-                          Call<List> call = ApiAdapter.getApiService().postSesionRecolector("basic V2VuYWFhYToxMjM0",sessionData);
+                          Call<List> call = ApiAdapter.getApiService().postSesionRecolector("basic YWRtaW5pc3RyYWRvcjphZG1pbmlzdHJhZG9y",sessionData);
 
                           call.enqueue(new Callback<List>() {
                               @Override

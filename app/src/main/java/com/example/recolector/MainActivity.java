@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-
+    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setToolbar();
         drawerLayout =findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navView);
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.menu_perfil).build();
 
        Intent intencion = new Intent(MainActivity.this,IniciarSesion.class);
         startActivity(intencion);
