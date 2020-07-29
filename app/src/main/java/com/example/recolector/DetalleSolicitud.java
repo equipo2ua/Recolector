@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DetalleSolicitud extends AppCompatActivity {
 
@@ -42,14 +43,14 @@ public class DetalleSolicitud extends AppCompatActivity {
         DenyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(DetalleSolicitud.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT);
             }
         });
 
         AcceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(DetalleSolicitud.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT);
             }
         });
 

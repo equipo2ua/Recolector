@@ -64,9 +64,6 @@ public class Inicio extends AppCompatActivity {
 
     }
 
-
-
-
     private void setEncabezado(String name, float rating, String statisticsUser){
         LayoutInflater inflater = LayoutInflater.from(this);
         int id = R.layout.encabezado_inicio;
@@ -100,7 +97,7 @@ public class Inicio extends AppCompatActivity {
         Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(Inicio.this,"Esta funcion aun no es valida",Toast.LENGTH_SHORT);
             }
         });
         Verificar.setOnClickListener(new View.OnClickListener() {
